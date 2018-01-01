@@ -73,6 +73,7 @@ This code is based on the pooler cpuminer and inherits
 its command line interface and options.
 
   -a, --algo=ALGO       specify the algorithm to use
+                          bcd         use to mine Bitcoin Diamond
                           bastion     use to mine Joincoin
                           bitcore     use to mine Bitcore's Timetravel10
                           blake       use to mine Saffroncoin (Blake256)

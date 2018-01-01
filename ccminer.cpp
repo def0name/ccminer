@@ -2226,6 +2226,7 @@ static void *miner_thread(void *userdata)
 			case ALGO_TRIBUS:
 				minmax = 0x1000000;
 				break;
+			case ALGO_BCD:
 			case ALGO_C11:
 			case ALGO_DEEP:
 			case ALGO_HEAVY:
@@ -2314,6 +2315,9 @@ static void *miner_thread(void *userdata)
 		/* scan nonces for a proof-of-work hash */
 		switch (opt_algo) {
 
+		case ALGO_BCD:
+			rc = scanhash_x13_opt(thr_id, &work, max_nonce, &hashes_done);
+			break;
 		case ALGO_BASTION:
 			rc = scanhash_bastion(thr_id, &work, max_nonce, &hashes_done);
 			break;
